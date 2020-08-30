@@ -8,5 +8,9 @@ services:
       - 1234:8080
     volumes:
       - ./:/app
+      - yarn-cache:/usr/local/share/.cache/yarn/v6
     stdin_open: true
     tty: true
+
+volumes:
+  yarn-cache:
