@@ -1,0 +1,12 @@
+version: "3"
+services:
+  vuejs-lecture:
+    build: .
+    command: yarn serve
+    working_dir: /app/vuejs-lecture
+    ports:
+      - 1234:8080
+    volumes:
+      - ./:/app
+    stdin_open: true
+    tty: true
