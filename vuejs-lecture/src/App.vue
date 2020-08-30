@@ -6,7 +6,12 @@
       <v-spacer></v-spacer>
     </v-app-bar>
     <SideNav />
-    <v-content> </v-content>
+
+    <v-main>
+      <v-container fluid fill-height align-start>
+        <router-view />
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
