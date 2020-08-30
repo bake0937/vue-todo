@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Addresses from "../views/Addresses";
+import AddressForm from "../views/AddressFrom.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,12 @@ const routes = [
     path: "/addresses",
     name: "addresses",
     component: Addresses,
+  },
+  {
+    // ?をつけることでオプション扱いになる
+    path: "/address/:address_id?/edit",
+    name: "address_edit",
+    component: AddressForm,
   },
   {
     path: "/about",
