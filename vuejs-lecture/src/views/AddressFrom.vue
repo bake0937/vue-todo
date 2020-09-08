@@ -26,7 +26,7 @@
                 <v-btn @click="$router.push({ name: 'addresses' })"
                   >キャンセル</v-btn
                 >
-                <v-btn color="info" class="ml-2">保存</v-btn>
+                <v-btn color="info" @click="submit">保存</v-btn>
               </div>
             </v-form>
           </v-card-text>
@@ -37,11 +37,21 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   data() {
     return {
       address: {},
     };
+  },
+  methods: {
+    submit() {
+      this.addAddress(this.address);
+      this.$router.push({ name: "addresses" });
+      this.address = {};
+    },
+    ...mapActions(["addAddress"]),
   },
 };
 </script>
